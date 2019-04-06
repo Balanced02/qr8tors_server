@@ -1,0 +1,35 @@
+{
+  "name": "creatorsserver",
+  "version": "1.0.0",
+  "description": "Qr8tors Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && node dist/index.js",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "build": "babel src -d dist",
+    "prebuild": "rm -rf build/*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "qr8tors",
+    "express"
+  ],
+  "author": "Daniel Adepoju",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "mongoose": "^5.4.22",
+    "morgan": "^1.9.1"
+  }
+}
