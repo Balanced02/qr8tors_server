@@ -16,7 +16,17 @@ export const createUser = (req, res) => {
       });
     })
     .catch(err => {
-      return res.json({
+      if (err.message) {
+        if (err.message.includes("email")) {
+          return res.status(409).json({
+            message: `User with ${req.body.email} already exists`
+          });
+        }
+        return res.status(409).json({
+          message: err.message
+        });
+      }
+      return res.status(409).json({
         message: err.message
       });
     });
